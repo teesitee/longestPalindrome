@@ -3,8 +3,26 @@ package main
 import "fmt"
 
 func main() {
-	s := "babad"
+	s := "ccccccccccccc"
 	var palin []string
+	if palin == nil {
+		var countLetter int
+		for i := range s {
+			letter := s[0]
+			if letter == s[i] {
+				countLetter += 1
+			} else {
+				break
+			}
+
+		}
+		if countLetter == len(s) {
+			fmt.Println("palindrome :", string(s[0]))
+			return
+		}
+
+	}
+
 	if len(s) == 1 {
 		palin = append(palin, s)
 		fmt.Println(palin)
@@ -28,8 +46,8 @@ func main() {
 
 	}
 	if len(palin) == 0 {
-		fmt.Println("first palindrome :", string(s[0]))
+		fmt.Println("palindrome :", string(s[0]))
 	} else {
-		fmt.Println("palindrome total :", palin, "\nfirst palindrome :", palin[0])
+		fmt.Println("palindrome total :", palin, "\npalindrome :", palin[0])
 	}
 }
