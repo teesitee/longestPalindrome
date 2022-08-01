@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	s := "ccccccccccccc"
+	s := "xxxxxxxxx"
 	var palin []string
 	if palin == nil {
 		var countLetter int
@@ -17,7 +17,7 @@ func main() {
 
 		}
 		if countLetter == len(s) {
-			fmt.Println("palindrome :", string(s[0]))
+			fmt.Println("palindrome :", string(s))
 			return
 		}
 
