@@ -6,10 +6,11 @@ import (
 )
 
 func main() {
-	s := "fffff"
+	s := "mwwfjysbkebpdjyabcfkgprtxpwvhglddhmvaprcvrnuxifcrjpdgnktvmggmguiiquibmtviwjsqwtchkqgxqwljouunurcdtoeygdqmijdympcamawnlzsxucbpqtuwkjfqnzvvvigifyvymfhtppqamlgjozvebygkxawcbwtouaankxsjrteeijpuzbsfsjwxejtfrancoekxgfyangvzjkdskhssdjvkvdskjtiybqgsmpxmghvvicmjxqtxdowkjhmlnfcpbtwvtmjhnzntxyfxyinmqzivxkwigkondghzmbioelmepgfttczskvqfejfiibxjcuyevvpawybcvvxtxycrfbcnpvkzryrqujqaqhoagdmofgdcbhvlwgwmsmhomknbanvntspvvhvccedzzngdywuccxrnzbtchisdwsrfdqpcwknwqvalczznilujdrlevncdsyuhnpmheukottewtkuzhookcsvctsqwwdvfjxifpfsqxpmpwospndozcdbfhselfdltmpujlnhfzjcgnbgprvopxklmlgrlbldzpnkhvhkybpgtzipzotrgzkdrqntnuaqyaplcybqyvidwcfcuxinchretgvfaepmgilbrtxgqoddzyjmmupkjqcypdpfhpkhitfegickfszermqhkwmffdizeoprmnlzbjcwfnqyvmhtdekmfhqwaftlyydirjnojbrieutjhymfpflsfemkqsoewbojwluqdckmzixwxufrdpqnwvwpbavosnvjqxqbosctttxvsbmqpnolfmapywtpfaotzmyjwnd"
 	var palin []string
 	var truePalin []string
 	var finalPalin []string
+	var lastPalin string
 	if palin == nil {
 		var countLetter int
 		for i := range s {
@@ -69,8 +70,19 @@ func main() {
 		// fmt.Println("finalPalin :", finalPalin)
 	}
 	if len(truePalin) == 0 {
+
 		fmt.Println("palindrome :", string(s[0]))
 	} else {
-		fmt.Println("final palindrome :", finalPalin)
+
+		lastPalin = finalPalin[0]
+		for i := range finalPalin {
+			if len(lastPalin) < len(finalPalin[i]) || lastPalin == "" {
+				lastPalin = finalPalin[i]
+			}
+
+		}
+
+		fmt.Println("final palindrome :", lastPalin)
 	}
+
 }
